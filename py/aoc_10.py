@@ -21,7 +21,7 @@ def knot_round(lengths, curlist, i, s):
 
 def main():
     inp =  '94,84,0,79,2,27,81,1,123,93,218,23,103,255,254,243'
-    inp =  '1,2,4'
+    # inp =  '1,2,4'
     # inp =  aoc_input.strip()
     print("input:", inp)
     lengths = [ord(i) for i in inp]
@@ -48,7 +48,9 @@ def main():
             result = result ^ item
         dense_hash.append(result)
     print("dense:", dense_hash)
-    print("hash:","".join(["%x" % i for i in dense_hash]))
+    print(len(dense_hash))
+    hashstring = "".join(["%02x" % i for i in dense_hash])
+    print("hash:", hashstring, len(hashstring))
     
     # print(curlist[0] * curlist[1])
 if __name__ == "__main__":
